@@ -54,7 +54,7 @@ function Get-ITGlueAPIKey {
     C:\PS> Get-ITGlueAPIKey
 .NOTES
 #>
-    if ($ITGlue_API_Key -eq $null) {
+    if ($null -eq $ITGlue_API_Key) {
         Write-Error "No API key exists. Please run Add-ITGlueAPIKey to add one."
     }
     else {
