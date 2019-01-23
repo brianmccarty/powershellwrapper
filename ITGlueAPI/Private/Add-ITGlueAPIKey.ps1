@@ -18,18 +18,3 @@ function Add-ITGlueAPIKey {
         Set-Variable -Name "ITGlue_API_Key" -Value $x_api_key -Option ReadOnly -Scope global -Force
     }
 }
-
-function Remove-ITGlueAPIKey {
-    Remove-Variable -Name "ITGlue_API_Key" -Scope global -Force
-}
-
-function Get-ITGlueAPIKey {
-    if($ITGlue_API_Key -eq $null) {
-        Write-Error "No API key exists. Please run Add-ITGlueAPIKey to add one."
-    }
-    else {
-        $ITGlue_API_Key
-    }
-}
-
-New-Alias -Name Set-ITGlueAPIKey -Value Add-ITGlueAPIKey
